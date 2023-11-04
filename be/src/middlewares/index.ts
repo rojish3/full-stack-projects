@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 import { MongoClient } from "mongodb";
 import { Request, Response, NextFunction } from "express";
+import { env } from "../config";
 // const jwt = require("jsonwebtoken");
-const uri =
-  "mongodb+srv://rojishranjit3:wBonN0lSva6kuCI4@cluster0.mvw7xc3.mongodb.net/";
+const uri: string = env.URI ?? "";
 const client = new MongoClient(uri);
 const database = client.db("WebApplication");
 const usersCollection = database.collection("users");

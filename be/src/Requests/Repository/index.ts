@@ -1,7 +1,7 @@
 import { MongoClient, ObjectId } from "mongodb";
+import { env } from "../../config";
 
-const uri =
-  "mongodb+srv://rojishranjit3:wBonN0lSva6kuCI4@cluster0.mvw7xc3.mongodb.net/";
+const uri: string = env.URI ?? "";
 
 const client = new MongoClient(uri);
 const database = client.db("WebApplication");

@@ -1,12 +1,10 @@
 import { MongoClient, ObjectId } from "mongodb";
 import { IUser } from "../../types/users.types";
-// import jwt from "jsonwebtoken";
+import { env } from "../../config/index";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-const jwt = require("jsonwebtoken");
-
-const uri =
-  "mongodb+srv://rojishranjit3:wBonN0lSva6kuCI4@cluster0.mvw7xc3.mongodb.net/";
+const uri: string = env.URI ?? "";
 const client = new MongoClient(uri);
 const database = client.db("WebApplication");
 const usersCollection = database.collection("users");
